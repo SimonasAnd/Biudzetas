@@ -22,7 +22,6 @@ class Biudzetas:
 
     def ivesti_pajamas(self, suma, kategorija, siuntejas, pap_info):
         self.id_tikrinimas()
-        print(f">>>>> {self.ataskaita}")
         paj_irasas = PajamuIrasas(self.id_nr, suma, kategorija, siuntejas, pap_info)
         self.ataskaita.append(paj_irasas)
         self.id_nr += 1
@@ -30,6 +29,7 @@ class Biudzetas:
             pickle.dump(self.ataskaita, pkl_file)
 
     def ivesti_islaidas(self, suma, kategorija, atsiskaitymo_budas, isigyta_preke_paslauga):
+        self.id_tikrinimas()
         isl_irasas = IslaiduIrasas(self.id_nr, suma, kategorija, atsiskaitymo_budas, isigyta_preke_paslauga)
         self.ataskaita.append(isl_irasas)
         self.id_nr += 1
