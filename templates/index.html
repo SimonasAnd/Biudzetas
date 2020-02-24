@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biudžetas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="main rounded">
+            <h1>Biudžetas</h1>
+            <div class="line"></div>
+            <div class="meniu">
+                <a href="prideti.html">[ » ] Pridėti pinigų</a><br>
+                <a href="isimti.html">[ » ] Išimti pinigus</a><br>
+                <a href="ataskaita.html">[ » ] Parodyti ataskaitą</a><br>
+            </div>
+            <div class="line"></div>
+            <div class="meniu">
+                <a href="/balansas" style="font-size: 18px;">Parodyti balansą</a>
+                {% if veiksmas == "balansas" %}
+                <br/><span style="color: whitesmoke; font-size: 20px; font-weight: bold;">{{balansas}}€</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

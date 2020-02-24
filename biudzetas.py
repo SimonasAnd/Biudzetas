@@ -45,6 +45,9 @@ class Biudzetas:
             else:
                 print(f'ID: {atask.id}, Data: {atask.data}, Tipas: {atask.tipas}, Suma: {atask.suma}, Kategorija: {atask.kategorija}, Atsiskaitymo budas: {atask.atsiskaitymo_budas}, Isigyta preke/paslauga: {atask.isigyta_preke_paslauga}')
 
+    def gauti_ataskaitahtml(self):
+        return self.ataskaita
+
     def trinti_irasa(self, idnr):
         nerastas = True
 
@@ -53,10 +56,8 @@ class Biudzetas:
                 del self.ataskaita[self.ataskaita.index(atask)]
                 nerastas = False
                 print(f"Irasasas {idnr} [ID], sekmingai panaikintas")
-                input('Paspauskite ENTER')
                 with open('ataskaita.pkl', 'wb') as pkl_file:
                     pickle.dump(self.ataskaita, pkl_file)
-
         if nerastas:
             print("Tokio ID nera")
             input('Paspauskite ENTER')

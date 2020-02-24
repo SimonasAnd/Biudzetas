@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biudzetas</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biudžetas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="main rounded">
+            <h1>Išimti pinigus</h1>
+            <div class="line"></div>
+            <div class="meniu">
+                {% if veiksmas == "pradzia" %}
+                <form action="" method="post">
+                    Suma:<br/>
+                    <input type="number" name="suma" value="0"><br/>
+                    Kategorija:<br/>
+                    <select name="kategorija">
+                        <option value="pirkiniai">Pirkiniai</option>
+                        <option value="pavedimas">Banko pavedimas</option>
+                        <option value="kita">Kita</option>
+                    </select><br/>
+                    Atsiskaitymo būdas:<br/>
+                    <select name="budas">
+                        <option value="kortele">Banko kortele</option>
+                        <option value="gryni">Grynais</option>
+                    </select><br/>
+                    Įsigyta prekė/paslauga:<br/>
+                    <input type="text" name="isigyta"><br/><br/>
+                    <button>Patvirtinti</button>
+                </form>
+                {% endif %}
+                {% if veiksmas == "po" %}
+                    <span class="font-size: 18px">Sėkmingai pridėti pinigai</span>
+                {% endif %}
+            </div>
+            <div class="line"></div>
+            <div class="meniu" style="text-align: center;">
+                <a href="index.html">Grįžti atgal</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

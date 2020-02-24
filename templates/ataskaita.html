@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biudžetas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="main rounded">
+            <h1>Ataskaita</h1>
+            <div class="line"></div>
+            <div class="meniu">
+                {% for atask in ataskaita: %}
+                {% if atask.tipas == "Pajamos": %}
+                <div class="atask_item">
+                    <a href="ataskaita.html/trinti/?idd={{atask.id}}">[x]</a>
+                    ID {{atask.id}}, Data: {{atask.data}}, Tipas: {{atask.tipas}}, Suma: {{atask.suma}}, Kategorija: {{atask.kategorija}}, Siuntėjas: {{atask.siuntejas}}, Papildoma info: {{atask.pap_info}}<br/>
+                </div>
+                {% else: %}
+                <div class="atask_item">
+                    <a href="ataskaita.html/trinti/?idd={{atask.id}}">[x]</a>
+                    ID {{atask.id}}, Data: {{atask.data}}, Tipas: {{atask.tipas}}, Suma: {{atask.suma}}, Kategorija: {{atask.kategorija}}, Atsiskaitymo būdas: {{atask.atsiskaitymo_budas}}, Įsigyta prekė/paslauga: {{atask.isigyta_preke_paslauga}}<br/>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div style="margin: 10px 0;">
+                    <a href="ataskaita.html/trinti/?idd=999">Ištrinti visus</a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="meniu" style="text-align: center;">
+                <a href="index.html">Grįžti atgal</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

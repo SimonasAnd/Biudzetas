@@ -6,5 +6,5 @@ class IslaiduIrasas(Irasas):
         Irasas.__init__(self, id, suma, kategorijos)
         self.atsiskaitymo_budas = atsiskaitymo_budas
         self.isigyta_preke_paslauga = isigyta_preke_paslauga
-        self.tipas = 'Islaidos'
+        self.tipas = 'Išlaidos'
         self.data = datetime.datetime.now()
