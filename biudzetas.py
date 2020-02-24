@@ -14,8 +14,15 @@ class Biudzetas:
         ataskaita = []
         id_nr = 0
 
+    def id_tikrinimas(self):
+        if len(self.ataskaita) == 0:
+            self.id_nr = 0
+        elif self.ataskaita[-1].id != self.id_nr-1:
+            self.id_nr = self.ataskaita[-1].id + 1
 
     def ivesti_pajamas(self, suma, kategorija, siuntejas, pap_info):
+        self.id_tikrinimas()
+        print(f">>>>> {self.ataskaita}")
         paj_irasas = PajamuIrasas(self.id_nr, suma, kategorija, siuntejas, pap_info)
         self.ataskaita.append(paj_irasas)
         self.id_nr += 1
